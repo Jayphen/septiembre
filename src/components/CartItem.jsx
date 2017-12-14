@@ -26,7 +26,7 @@ const CartItem = (props) => {
         <div className="cart-item--actions">
           <button
             className="btn btn--secondary"
-            onClick={() => alert('Not implemented...:( Try delete instead!')}
+            onClick={() => props.handleChange(item.id)}
           >
             <span className="btn--secondary-underline">Change</span>
           </button>

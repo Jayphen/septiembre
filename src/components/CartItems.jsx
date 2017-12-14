@@ -5,10 +5,17 @@ import products from '../data/products';
 
 const getItem = id => products.find(product => product.id === id);
 
-const CartItems = ({ items, handleDelete }) => (
+const CartItems = ({ items, handleDelete, handleChange }) => (
   <div>
     {items.map(item => (
-      <CartItem key={item.id} handleDelete={handleDelete} size={item.size} qty={item.qty} item={getItem(item.id)} />
+      <CartItem
+        key={item.id}
+        handleDelete={handleDelete}
+        handleChange={handleChange}
+        size={item.size}
+        qty={item.qty}
+        item={getItem(item.id)}
+      />
       ))}
   </div>
 );

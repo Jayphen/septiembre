@@ -6,7 +6,7 @@ import CartItems from './CartItems';
 import CartTotal from './CartTotal';
 
 const CartModal = ({
-  isOpen, onRequestClose, itemsInCart, handleDelete,
+  isOpen, onRequestClose, itemsInCart, handleDelete, handleChange,
 }) => (
   <Modal
     tabIndex={0}
@@ -36,7 +36,11 @@ const CartModal = ({
     </header>
     {itemsInCart.length > 0 &&
       <React.Fragment>
-        <CartItems handleDelete={handleDelete} items={itemsInCart} />
+        <CartItems
+          handleDelete={handleDelete}
+          handleChange={handleChange}
+          items={itemsInCart}
+        />
         <CartTotal items={itemsInCart} />
       </React.Fragment>
       }

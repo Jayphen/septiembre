@@ -35,6 +35,18 @@ class ShoppingCart extends Component {
     });
   }
 
+  handleChange = (id) => {
+    this.setState({
+      itemsInCart: this.state.itemsInCart.map((item) => {
+        if (item.id !== id) return item;
+
+        return Object.assign({}, item, {
+          qty: item.qty + 1,
+        });
+      }),
+    });
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -48,6 +60,7 @@ class ShoppingCart extends Component {
           onRequestClose={this.closeModal}
           itemsInCart={this.state.itemsInCart}
           handleDelete={this.handleDelete}
+          handleChange={this.handleChange}
         />
       </React.Fragment>
     );
