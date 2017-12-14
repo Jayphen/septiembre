@@ -7,6 +7,7 @@
 @import './site-nav';
 @import './cart-nav';
 @import './product';
+@import './shopping-cart';
 
 body, html {
   height: 100%;

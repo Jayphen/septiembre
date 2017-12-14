@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Button from './components/Button';
+import ShoppingCart from './components/ShoppingCart';
 
 const rootElement = document.querySelector('.add-to-bag');
 
 ReactDOM.render(
-  <Button text="Add to shopping bag" />,
+  <ShoppingCart />,
   rootElement,
 );
 

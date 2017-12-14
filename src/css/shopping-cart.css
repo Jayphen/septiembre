@@ -1,0 +1,52 @@
+.ReactModal__Body--open {
+  overflow: hidden;
+}
+
+.shopping-cart-overlay--after-open {
+  background: rgba(250,248,245,0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.shopping-cart {
+  position: absolute;
+  max-width: 42rem;
+  width: 90vw;
+  min-height: 50vh;
+  padding: 0.5rem;
+  border-radius: 3px;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background: white;
+  box-shadow: 0 0 40px 0 #EBE8E1;
+
+  @media (--xs) {
+    height: 100%;
+  }
+
+  & header {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  & header h1 {
+    margin: 0;
+    font-size: var(--2xl);
+  }
+
+  & header svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+  }
+}
+
+.shopping-cart:focus {
+  outline: none;
+}
