@@ -1,3 +1,6 @@
+import turtleneck from '../../static/cashmere-turtleneck.jpg';
+import denim from '../../static/denim-jacket.jpg';
+
 const data = [
   {
     id: 1,
@@ -8,7 +11,7 @@ const data = [
       { long: 'Medium', short: 'M' },
       { long: 'Large', short: 'L' },
     ],
-    image: 'https://s3.amazonaws.com/uifaces/faces/twitter/k/128.jpg',
+    image: denim,
   },
   {
     id: 2,
@@ -19,7 +22,7 @@ const data = [
       { long: 'Medium', short: 'M' },
       { long: 'Large', short: 'L' },
     ],
-    image: 'https://s3.amazonaws.com/uifaces/faces/twitter/sauro/128.jpg',
+    image: turtleneck,
   },
 ];
 
