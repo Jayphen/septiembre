@@ -2,13 +2,17 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 const getSize = (size, arr) => arr.find(item => item.short === size);
+const isProd = process.env.NODE_ENV !== 'development';
 
 const CartItem = (props) => {
   const item = { ...props.item };
+  // Fix image path in dev because I couldn't figure out why
+  // Parceljs is getting the path wrong here
+  const imgPath = isProd ? item.image : `dist/${item.image}`;
 
   return (
     <div className="cart-item">
-      <img className="cart-item--image" src={item.image} alt={item.name} />
+      <img className="cart-item--image" src={imgPath} alt={item.name} />
       <div className="cart-item--details">
         <h2 className="cart-item--title">{item.name}</h2>
         <div className="cart-item--options">
