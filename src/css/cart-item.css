@@ -4,6 +4,12 @@
   align-items: center;
   margin: 1em;
   box-sizing: border-box;
+
+  @media (--xs) {
+    border-bottom: 4px solid var(--light-bg);
+    padding: 0 0.5rem 1rem 0.5rem;
+    margin: 1em 0;
+  }
 }
 
 .cart-item--image {
@@ -12,6 +18,11 @@
   padding: 0.5rem;
   border: 1px solid var(--light-aubergine);
   flex-basis: 0;
+
+  @media (--xs) {
+    max-width: 3rem;
+    max-height: 3rem;
+  }
 }
 
 .cart-item--details {
@@ -35,8 +46,10 @@
 
 .cart-item--price {
   justify-self: flex-end;
-  margin-left: 7rem;
   font-size: var(--xl);
+  max-width: 8rem;
+  text-align: right;
+  width: 100%;
 }
 
 .cart-item--actions {

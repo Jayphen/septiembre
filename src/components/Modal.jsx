@@ -10,7 +10,7 @@ const CartModal = ({
   <Modal
     tabIndex={0}
     id="viewCart"
-    isOpen
+    isOpen={isOpen}
     onRequestClose={onRequestClose}
     aria={{
       labelledby: 'heading',
