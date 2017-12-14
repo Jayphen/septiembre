@@ -3,7 +3,9 @@
   "plugins": {
     "autoprefixer": {
       "browsers": [">1%"]
-    }
+    },
+    "postcss-nested": {},
+    "postcss-custom-media": {}
   }
 }
 

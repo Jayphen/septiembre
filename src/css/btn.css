@@ -3,25 +3,27 @@
   text-align: center;
   cursor: pointer;
   border: 0;
+
+  &--primary {
+    color: var(--light-bg);
+    background: var(--pink);
+    padding: var(--xl) var(--sm);
+    font-size: var(--lg);
+    font-weight: 500;
+  }
+
+  &--secondary {
+    display: flex;
+    align-items: flex-end;
+  }
+  &--secondary-underline {
+    border-bottom: 2px solid var(--pink);
+    padding: 0 3px 1px 3px;
+    margin-left: 0.1rem;
+  }
 }
+
 .btn:active,
 .btn:focus {
   outline: none;
 }
-.btn--primary {
-  color: var(--light-bg);
-  background: var(--pink);
-  padding: var(--xl) var(--sm);
-  font-size: var(--lg);
-  font-weight: 500;
-}
-.btn--secondary {
-  display: flex;
-  align-items: flex-end;
-}
-.btn--secondary .btn--secondary-underline {
-  border-bottom: 2px solid var(--pink);
-  padding: 0 3px 1px 3px;
-  margin-left: 0.1rem;
-}
-
