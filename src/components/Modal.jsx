@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Modal from 'react-modal';
 import ModalClose from './ModalClose';
 import CartItems from './CartItems';
+import CartTotal from './CartTotal';
 
 const CartModal = ({
   isOpen, onRequestClose, itemsInCart, handleDelete,
@@ -34,6 +35,7 @@ const CartModal = ({
       />
     </header>
     <CartItems handleDelete={handleDelete} items={itemsInCart} />
+    {itemsInCart.length > 0 && <CartTotal items={itemsInCart} />}
   </Modal>
 );
 
