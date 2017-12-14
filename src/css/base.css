@@ -21,6 +21,9 @@ body, html {
 body, input, button, select {
   font-family: 'Rubik', sans-serif;
   line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 ul, li { list-style: none }
