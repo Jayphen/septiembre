@@ -1,0 +1,32 @@
+.cart-nav {
+  grid-area: cart-nav;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 530px;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  @media (--sm) {
+    padding: 1rem;
+  }
+
+  & .btn {
+    @media (--xs) {
+      margin: 0 auto;
+    }
+  }
+}
+.cart-nav svg {
+  width: 27px;
+  height: 27px;
+}
+
+.searchbar {
+  @media (--xs) {
+    display: none;
+  }
+}
+
+

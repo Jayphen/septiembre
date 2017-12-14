@@ -1,11 +1,23 @@
 {
   "modules": false,
   "plugins": {
-    "autoprefixer": {
-      "browsers": [">1%"]
+    "postcss-cssnext": {
+      "features": {
+        "customProperties": false,
+        "autoprefixer": {
+          "browsers": [">1%"]
+        },
+        "customMedia": {
+          "extensions": {
+            "--xs":  "(max-width: 500px)",
+            "--sm":  "(max-width: 1000px)",
+            "--md": "(min-width: 1300px)",
+            "--lg":  "(min-width: 1800px)"
+          }
+        }
+      }
     },
-    "postcss-nested": {},
-    "postcss-custom-media": {}
+    "postcss-nested": {}
   }
 }
 

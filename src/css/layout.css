@@ -9,12 +9,12 @@
   grid-template-rows: 90px 1fr;
 }
 
-@media screen and (min-width: 1300px) {
+@media (--md) {
   .container {
     grid-template-columns: 1fr 1fr;
   }
 }
-@media screen and (max-width: 1000px) {
+@media (--sm) {
   /*Single-column view for smaller screens*/
   .container {
     grid-template-areas: "site-nav"
