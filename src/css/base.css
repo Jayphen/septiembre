@@ -1,7 +1,6 @@
 @import 'normalize.css';
 @import './colors';
 @import './sizes';
-@import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500|Spectral');
 
 @import './btn';
 @import './layout';
