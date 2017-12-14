@@ -7,7 +7,7 @@
     "start": "NODE_ENV=development parcel src/index.html",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint src/**/*.jsx",
-    "build": "NODE_ENV=production parcel build src/index.html --no-minify --public-url ./"
+    "build": "parcel build src/index.html --no-minify --public-url ./"
   },
   "keywords": [],
   "author": "",
