@@ -15,12 +15,21 @@ class ShoppingCart extends Component {
     this.setState({ modalIsOpen: false });
   }
 
+  handleKeyDown = (evt) => {
+    // Trigger modal on space or enter
+    if (evt.key === ' ' || evt.key === 13) {
+      evt.preventDefault();
+      this.openModal();
+    }
+  }
+
   render() {
     return (
       <React.Fragment>
         <Button
           text="Added! View shopping bag"
           handleClick={this.openModal}
+          handleKeyDown={this.handleKeyDown}
         />
         <CartModal
           isOpen={this.state.modalIsOpen}

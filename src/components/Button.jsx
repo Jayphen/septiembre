@@ -1,15 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Button = ({ text, handleClick }) => (
-  <div className="btn btn--primary" onClick={handleClick}>
+const Button = ({ text, handleClick, handleKeyDown }) => (
+  <button
+    tabIndex={0}
+    className="btn btn--primary"
+    onClick={handleClick}
+    onKeyDown={handleKeyDown}
+  >
     {text}
-  </div>
+  </button>
 );
 
 Button.propTypes = {
   text: PropTypes.string,
   handleClick: PropTypes.func.isRequired,
+  handleKeyDown: PropTypes.func.isRequired,
 };
 
 Button.defaultProps = {
