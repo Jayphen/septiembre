@@ -34,8 +34,16 @@ const CartModal = ({
         fill="#938F9C"
       />
     </header>
-    <CartItems handleDelete={handleDelete} items={itemsInCart} />
-    {itemsInCart.length > 0 && <CartTotal items={itemsInCart} />}
+    {itemsInCart.length > 0 &&
+      <React.Fragment>
+        <CartItems handleDelete={handleDelete} items={itemsInCart} />
+        <CartTotal items={itemsInCart} />
+      </React.Fragment>
+      }
+
+    {itemsInCart.length === 0 && (
+    <div className="empty-cart">Cart is empty</div>
+      )}
   </Modal>
 );
 
