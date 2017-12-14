@@ -31,11 +31,11 @@
   &--secondary {
     display: flex;
     align-items: flex-end;
+    padding: 0;
   }
   &--secondary-underline {
-    border-bottom: 2px solid var(--pink);
-    padding: 0 3px 1px 3px;
-    margin-left: 0.1rem;
+    border-bottom: 0.1em solid var(--pink);
+    padding-bottom: 0.1em;
   }
 }
 

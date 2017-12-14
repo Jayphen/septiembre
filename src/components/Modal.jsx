@@ -2,12 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Modal from 'react-modal';
 import ModalClose from './ModalClose';
+import CartItems from './CartItems';
 
-const CartModal = ({ isOpen, onRequestClose }) => (
+const CartModal = ({
+  isOpen, onRequestClose, itemsInCart, handleDelete,
+}) => (
   <Modal
     tabIndex={0}
     id="viewCart"
-    isOpen={isOpen}
+    isOpen
     onRequestClose={onRequestClose}
     aria={{
       labelledby: 'heading',
@@ -30,6 +33,7 @@ const CartModal = ({ isOpen, onRequestClose }) => (
         fill="#938F9C"
       />
     </header>
+    <CartItems handleDelete={handleDelete} items={itemsInCart} />
   </Modal>
 );
 

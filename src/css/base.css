@@ -8,6 +8,7 @@
 @import './cart-nav';
 @import './product';
 @import './shopping-cart';
+@import './cart-item';
 
 body, html {
   height: 100%;
@@ -24,3 +25,4 @@ ul, li { list-style: none }
 
 h1, h2, h3, h4 { font-weight: 500; }
 
+strong { font-weight: 500; }

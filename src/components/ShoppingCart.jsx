@@ -5,6 +5,10 @@ import CartModal from './Modal';
 class ShoppingCart extends Component {
   state = {
     modalIsOpen: false,
+    itemsInCart: [
+      { id: 1, size: 'S', qty: 2 },
+      { id: 2, size: 'S', qty: 1 },
+    ],
   }
 
   openModal = () => {
@@ -23,6 +27,14 @@ class ShoppingCart extends Component {
     }
   }
 
+  handleDelete = (id) => {
+    this.setState({
+      itemsInCart: this.state.itemsInCart.filter(item => (
+        item.id !== id
+      )),
+    });
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -34,6 +46,8 @@ class ShoppingCart extends Component {
         <CartModal
           isOpen={this.state.modalIsOpen}
           onRequestClose={this.closeModal}
+          itemsInCart={this.state.itemsInCart}
+          handleDelete={this.handleDelete}
         />
       </React.Fragment>
     );
