@@ -1,9 +1,10 @@
 .btn {
-  border-radius: 8px;
   text-align: center;
   cursor: pointer;
   border: 0;
   display: block;
+  -webkit-appearance: none;
+  border-radius: 0;
 
   &--primary {
     color: var(--light-bg);
@@ -13,6 +14,7 @@
     font-weight: 500;
     transition: all 0.1s ease-in;
     width: 100%;
+    border-radius: 8px;
   }
 
   &--primary:hover,
