@@ -55,6 +55,10 @@ const CartModal = ({
 CartModal.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   onRequestClose: PropTypes.func.isRequired,
+  itemsInCart: PropTypes.arrayOf(PropTypes.object).isRequired,
+  handleDelete: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  products: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 Modal.setAppElement('.add-to-bag');
