@@ -1,23 +1,31 @@
 import React, { Component } from 'react';
 import Button from './Button';
 import CartModal from './Modal';
+import products from '../data/products';
 
 class ShoppingCart extends Component {
   state = {
     modalIsOpen: false,
-    itemsInCart: [
-      { id: 1, size: 'S', qty: 2 },
-      { id: 2, size: 'S', qty: 1 },
-    ],
-  }
+    itemsInCart: [{ id: 1, size: 'S', qty: 2 }, { id: 2, size: 'S', qty: 1 }],
+    products: [],
+  };
+
+  componentDidMount = () => {
+    // This would normally be an http request
+    setTimeout(() => {
+      this.setState({
+        products,
+      });
+    }, 500);
+  };
 
   openModal = () => {
     this.setState({ modalIsOpen: true });
-  }
+  };
 
   closeModal = () => {
     this.setState({ modalIsOpen: false });
-  }
+  };
 
   handleKeyDown = (evt) => {
     // Trigger modal on space or enter
@@ -25,15 +33,13 @@ class ShoppingCart extends Component {
       evt.preventDefault();
       this.openModal();
     }
-  }
+  };
 
   handleDelete = (id) => {
     this.setState({
-      itemsInCart: this.state.itemsInCart.filter(item => (
-        item.id !== id
-      )),
+      itemsInCart: this.state.itemsInCart.filter(item => item.id !== id),
     });
-  }
+  };
 
   handleChange = (id) => {
     this.setState({
@@ -45,7 +51,7 @@ class ShoppingCart extends Component {
         });
       }),
     });
-  }
+  };
 
   render() {
     return (
@@ -61,6 +67,7 @@ class ShoppingCart extends Component {
           itemsInCart={this.state.itemsInCart}
           handleDelete={this.handleDelete}
           handleChange={this.handleChange}
+          products={this.state.products}
         />
       </React.Fragment>
     );

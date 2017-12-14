@@ -6,7 +6,12 @@ import CartItems from './CartItems';
 import CartTotal from './CartTotal';
 
 const CartModal = ({
-  isOpen, onRequestClose, itemsInCart, handleDelete, handleChange,
+  isOpen,
+  onRequestClose,
+  itemsInCart,
+  handleDelete,
+  handleChange,
+  products,
 }) => (
   <Modal
     tabIndex={0}
@@ -29,25 +34,21 @@ const CartModal = ({
   >
     <header>
       <h1 id="heading">Your shopping bag</h1>
-      <ModalClose
-        handleClick={onRequestClose}
-        fill="#938F9C"
-      />
+      <ModalClose handleClick={onRequestClose} fill="#938F9C" />
     </header>
-    {itemsInCart.length > 0 &&
+    {itemsInCart.length > 0 && (
       <React.Fragment>
         <CartItems
           handleDelete={handleDelete}
           handleChange={handleChange}
           items={itemsInCart}
+          products={products}
         />
-        <CartTotal items={itemsInCart} />
+        <CartTotal itemsInCart={itemsInCart} products={products} />
       </React.Fragment>
-      }
+    )}
 
-    {itemsInCart.length === 0 && (
-    <div className="empty-cart">Cart is empty</div>
-      )}
+    {itemsInCart.length === 0 && <div className="empty-cart">Cart is empty</div>}
   </Modal>
 );
 

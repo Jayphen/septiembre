@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import CartItem from './CartItem';
-import products from '../data/products';
 
-const getItem = id => products.find(product => product.id === id);
+const getItem = (products, id) => products.find(product => product.id === id);
 
-const CartItems = ({ items, handleDelete, handleChange }) => (
+const CartItems = ({
+  products, items, handleDelete, handleChange,
+}) => (
   <div>
     {items.map(item => (
       <CartItem
@@ -14,9 +15,9 @@ const CartItems = ({ items, handleDelete, handleChange }) => (
         handleChange={handleChange}
         size={item.size}
         qty={item.qty}
-        item={getItem(item.id)}
+        item={getItem(products, item.id)}
       />
-      ))}
+    ))}
   </div>
 );
 
