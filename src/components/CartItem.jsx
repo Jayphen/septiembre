@@ -20,7 +20,10 @@ const CartItem = (props) => {
           </span>
         </div>
         <div className="cart-item--actions">
-          <button className="btn btn--secondary">
+          <button
+            className="btn btn--secondary"
+            onClick={() => alert('Not implemented...:( Try delete instead!')}
+          >
             <span className="btn--secondary-underline">Change</span>
           </button>
           <button
