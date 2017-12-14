@@ -7,6 +7,7 @@
 @import './layout';
 @import './site-nav';
 @import './cart-nav';
+@import './product';
 
 body, html {
   height: 100%;
@@ -23,43 +24,3 @@ ul, li { list-style: none }
 
 h1, h2, h3, h4 { font-weight: 500; }
 
-.product-image {
-  background: var(--light-bg);
-  text-align: center;
-}
-.product-image img {
-  max-width: 90%;
-}
-@media (--xs) {
-  .product-image img {
-    max-height: 50vh;
-  }
-}
-.product-detail {
-  max-width: 530px;
-  margin: 0 auto;
-}
-
-.product-detail header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.product-detail h1 {
-  margin: 0;
-}
-
-.product-description--block {
-  display: flex;
-  margin-top: 2rem;
-}
-.product-description p {
-  margin: 0 0 1rem;
-  font-family: 'Spectral', serif;
-}
-.product-description--title {
-  min-width: 7rem;
-  font-size: var(--xs);
-  font-weight: 300;
-  color: var(--light-aubergine);
-}
