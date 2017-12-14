@@ -71,6 +71,8 @@
   &--price {
     font-size: var(--2xl);
     font-weight: 500;
-    margin-left: 1em;
+    max-width: 7rem;
+    display: inline-block;
+    width: 100%;
   }
 }
