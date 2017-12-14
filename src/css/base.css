@@ -1,6 +1,7 @@
 @import 'normalize.css';
 @import './colors';
 @import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500|Spectral');
+@import './btn.css';
 
 :root {
   --4xl:  2.25rem;
@@ -14,21 +15,17 @@
 }
 
 
-body, html { height: 100%; font-family: 'Rubik', sans-serif; line-height: 1.5 }
+body, html {
+  height: 100%;
+}
+body, input, button, select {
+  font-family: 'Rubik', sans-serif;
+  line-height: 1.5;
+}
+
 ul, li { list-style: none }
 
 h1, h2, h3, h4 { font-weight: 500; }
-
-.btn {
-  padding: 1rem;
-  border-radius: 8px;
-  text-align: center;
-  cursor: pointer;
-}
-.btn--primary {
-  color: white;
-  background: var(--pink);
-}
 
 .logo {
   font-size: var(--2xl);
@@ -97,8 +94,8 @@ h1, h2, h3, h4 { font-weight: 500; }
   margin: 0 auto;
 }
 .cart-nav svg {
-  width: 26px;
-  height: 26px;
+  width: 27px;
+  height: 27px;
 }
 
 .site-nav {

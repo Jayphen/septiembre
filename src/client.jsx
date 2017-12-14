@@ -5,7 +5,7 @@ import Button from './components/Button';
 const rootElement = document.querySelector('.add-to-bag');
 
 ReactDOM.render(
-  <Button text="Add to bag" />,
+  <Button text="Add to shopping bag" />,
   rootElement,
 );
 
