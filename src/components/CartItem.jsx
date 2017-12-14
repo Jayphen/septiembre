@@ -24,16 +24,10 @@ const CartItem = (props) => {
           </span>
         </div>
         <div className="cart-item--actions">
-          <button
-            className="btn btn--secondary"
-            onClick={() => props.handleChange(item.id)}
-          >
+          <button className="btn btn--secondary" onClick={() => props.handleChange(item.id)}>
             <span className="btn--secondary-underline">Change</span>
           </button>
-          <button
-            onClick={() => props.handleDelete(item.id)}
-            className="btn btn--secondary"
-          >
+          <button onClick={() => props.handleDelete(item.id)} className="btn btn--secondary">
             <span className="btn--secondary-underline">Delete</span>
           </button>
         </div>

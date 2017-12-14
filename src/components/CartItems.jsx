@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import CartItem from './CartItem';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 const getItem = (products, id) => products.find(product => product.id === id);
 
 const CartItems = ({
   products, items, handleDelete, handleChange,
 }) => (
-  <div>
+  <ReactCSSTransitionGroup
+    transitionName="cart-item"
+    transitionEnterTimeout={500}
+    transitionLeaveTimeout={300}
+  >
     {items.map(item => (
       <CartItem
         key={item.id}
@@ -18,7 +23,7 @@ const CartItems = ({
         item={getItem(products, item.id)}
       />
     ))}
-  </div>
+  </ReactCSSTransitionGroup>
 );
 
 export default CartItems;

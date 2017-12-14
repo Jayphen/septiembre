@@ -1,14 +1,32 @@
 .ReactModal__Body--open {
+  // Prevent scroll when modal is open
   overflow: hidden;
+}
+.ReactModalPortal > * {
+  opacity: 0;
+}
+.shopping-cart-overlay {
+  // Transition on open and close
+  opacity: 0;
+  transform: translateY(20px);
 }
 
 .shopping-cart-overlay--after-open {
+  transition: all 300ms ease-in;
   background: rgba(250,248,245,0.9);
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.shopping-cart-overlay--before-close {
+  opacity: 0;
+  transition: all 200ms ease-out;
+  transform: translateY(10px);
 }
 
 .shopping-cart {
@@ -56,6 +74,14 @@
   text-align: center;
   font-size: var(--lg);
   font-weight: 500;
+
+  &-enter {
+    opacity: 0;
+  }
+  &-enter-active {
+    opacity: 1;
+    transition: all 400ms ease-in 300ms;
+  }
 }
 
 .cart-total {

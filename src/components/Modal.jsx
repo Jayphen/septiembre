@@ -4,6 +4,7 @@ import Modal from 'react-modal';
 import ModalClose from './ModalClose';
 import CartItems from './CartItems';
 import CartTotal from './CartTotal';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 const CartModal = ({
   isOpen,
@@ -18,6 +19,7 @@ const CartModal = ({
     id="viewCart"
     isOpen={isOpen}
     onRequestClose={onRequestClose}
+    closeTimeoutMS={300}
     aria={{
       labelledby: 'heading',
     }}
@@ -36,19 +38,23 @@ const CartModal = ({
       <h1 id="heading">Your shopping bag</h1>
       <ModalClose handleClick={onRequestClose} fill="#938F9C" />
     </header>
-    {itemsInCart.length > 0 && (
-      <React.Fragment>
-        <CartItems
-          handleDelete={handleDelete}
-          handleChange={handleChange}
-          items={itemsInCart}
-          products={products}
-        />
-        <CartTotal itemsInCart={itemsInCart} products={products} />
-      </React.Fragment>
-    )}
+    <React.Fragment>
+      <CartItems
+        handleDelete={handleDelete}
+        handleChange={handleChange}
+        items={itemsInCart}
+        products={products}
+      />
+      {itemsInCart.length > 0 && <CartTotal itemsInCart={itemsInCart} products={products} />}
+    </React.Fragment>
 
-    {itemsInCart.length === 0 && <div className="empty-cart">Cart is empty</div>}
+    <ReactCSSTransitionGroup
+      transitionName="empty-cart"
+      transitionEnterTimeout={500}
+      transitionLeaveTimeout={300}
+    >
+      {itemsInCart.length === 0 && <div className="empty-cart">Cart is empty</div>}
+    </ReactCSSTransitionGroup>
   </Modal>
 );
 
