@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes, { arrayOf } from 'prop-types';
-import CartItem from './CartItem';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import CartItem from './CartItem';
 
 const getItem = (products, id) => products.find(product => product.id === id);
 

@@ -11,6 +11,12 @@ const CartDiscount = ({ percent }) => (
   </div>
 );
 
-CartDiscount.propTypes = {};
+CartDiscount.propTypes = {
+  percent: PropTypes.number,
+};
+
+CartDiscount.defaultProps = {
+  percent: 0,
+};
 
 export default CartDiscount;

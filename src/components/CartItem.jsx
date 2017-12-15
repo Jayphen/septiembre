@@ -37,4 +37,17 @@ const CartItem = (props) => {
   );
 };
 
+CartItem.propTypes = {
+  item: PropTypes.arrayOf(PropTypes.object).isRequired,
+  handleDelete: PropTypes.func,
+  handleChange: PropTypes.func,
+  qty: PropTypes.number.isRequired,
+  size: PropTypes.string.isRequired,
+};
+
+CartItem.defaultProps = {
+  handleChange: () => {},
+  handleDelete: () => {},
+};
+
 export default CartItem;
