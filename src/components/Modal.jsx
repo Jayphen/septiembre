@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Modal from 'react-modal';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import ModalClose from './ModalClose';
 import CartItems from './CartItems';
 import CartTotal from './CartTotal';
 import CartDiscount from './CartDiscount';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 const CartModal = ({
   isOpen,
@@ -76,11 +76,19 @@ const CartModal = ({
 
 CartModal.propTypes = {
   isOpen: PropTypes.bool.isRequired,
-  onRequestClose: PropTypes.func.isRequired,
+  onRequestClose: PropTypes.func,
   itemsInCart: PropTypes.arrayOf(PropTypes.object).isRequired,
-  handleDelete: PropTypes.func.isRequired,
-  handleChange: PropTypes.func.isRequired,
+  handleDelete: PropTypes.func,
+  handleChange: PropTypes.func,
   products: PropTypes.arrayOf(PropTypes.object).isRequired,
+  discount: PropTypes.number,
+};
+
+CartModal.defaultProps = {
+  onRequestClose: () => {},
+  handleDelete: () => {},
+  handleChange: () => {},
+  discount: 0,
 };
 
 Modal.setAppElement('.add-to-bag');
