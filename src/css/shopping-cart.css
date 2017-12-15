@@ -73,15 +73,22 @@
 
 .empty-cart {
   text-align: center;
-  font-size: var(--lg);
-  font-weight: 500;
-
+  margin-top: 5rem;
   &-enter {
     opacity: 0;
   }
   &-enter-active {
     opacity: 1;
     transition: all 400ms ease-in 300ms;
+  }
+
+  & > span {
+    font-size: var(--lg);
+    display: block;
+    margin-bottom: 3rem;
+  }
+  & button {
+    display: inline-block;
   }
 }
 

@@ -36,32 +36,41 @@ const CartModal = ({
       beforeClose: 'shopping-cart--before-close',
     }}
   >
-    <header>
-      <h1 id="heading">Your shopping bag</h1>
-      <ModalClose handleClick={onRequestClose} fill="#938F9C" />
-    </header>
-    <React.Fragment>
-      <CartItems
-        handleDelete={handleDelete}
-        handleChange={handleChange}
-        items={itemsInCart}
-        products={products}
-      />
-      {/* Show the discount panel if there is a discount applied and items in cart */}
-      {itemsInCart.length > 0 && discount > 0 && <CartDiscount percent={discount} />}
-      {itemsInCart.length > 0 && (
-        <CartTotal itemsInCart={itemsInCart} products={products} discount={discount} />
-      )}
-    </React.Fragment>
+    <div className="shopping-cart--contents">
+      <header>
+        <h1 id="heading">Your shopping bag</h1>
+        <ModalClose handleClick={onRequestClose} fill="#938F9C" />
+      </header>
+      <React.Fragment>
+        <CartItems
+          handleDelete={handleDelete}
+          handleChange={handleChange}
+          items={itemsInCart}
+          products={products}
+        />
+        {/* Show the discount panel if there is a discount applied and items in cart */}
+        {itemsInCart.length > 0 && discount > 0 && <CartDiscount percent={discount} />}
+        {itemsInCart.length > 0 && (
+          <CartTotal itemsInCart={itemsInCart} products={products} discount={discount} />
+        )}
+      </React.Fragment>
 
-    {/* Fade in the empty cart notice after a delay equal to the exit animation of the cart items */}
-    <ReactCSSTransitionGroup
-      transitionName="empty-cart"
-      transitionEnterTimeout={500}
-      transitionLeaveTimeout={300}
-    >
-      {itemsInCart.length === 0 && <div className="empty-cart">Cart is empty</div>}
-    </ReactCSSTransitionGroup>
+      {/* Fade in the empty cart notice after a delay equal to the exit animation of the cart items */}
+      <ReactCSSTransitionGroup
+        transitionName="empty-cart"
+        transitionEnterTimeout={500}
+        transitionLeaveTimeout={300}
+      >
+        {itemsInCart.length === 0 && (
+          <div className="empty-cart">
+            <span>There's nothing in your bag!</span>
+            <button className="btn btn--secondary" onClick={onRequestClose}>
+              <span className="btn--secondary-underline">Continue shopping</span>
+            </button>
+          </div>
+        )}
+      </ReactCSSTransitionGroup>
+    </div>
   </Modal>
 );
 
