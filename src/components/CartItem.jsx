@@ -38,7 +38,11 @@ const CartItem = (props) => {
 };
 
 CartItem.propTypes = {
-  item: PropTypes.arrayOf(PropTypes.object).isRequired,
+  item: PropTypes.shape({
+    id: PropTypes.number,
+    qty: PropTypes.number,
+    size: PropTypes.string,
+  }).isRequired,
   handleDelete: PropTypes.func,
   handleChange: PropTypes.func,
   qty: PropTypes.number.isRequired,
