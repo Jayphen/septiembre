@@ -35,19 +35,19 @@
     padding: 0;
   }
 
-  & header {
+  &--header {
     padding: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
-  & header h1 {
+  &--header h1 {
     margin: 0;
     font-size: var(--2xl);
   }
 
-  & header svg {
+  &--header svg {
     width: 1.5rem;
     height: 1.5rem;
     cursor: pointer;
@@ -109,4 +109,41 @@
     display: inline-block;
     width: 100%;
   }
+}
+
+.cart-discount {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--mint);
+  color: #48847D;
+  margin: 1rem 0.2rem;
+  padding: 1rem 0.8rem;
+  border-radius: 6px;
+
+  & p {
+    margin: 0;
+    font-size: var(--sm);
+  }
+
+  & header {
+    font-weight: 500;
+    font-size: var(--xl);
+    @media (--xs) {
+      font-size: var(--md);
+    }
+  }
+
+  &--subtotal {
+    text-align: right;
+    justify-self: flex-end;
+    font-size: var(--xl);
+    font-weight: 500;
+    white-space: nowrap;
+    @media (--xs) {
+      font-size: var(--lg);
+    }
+  }
+
+
 }

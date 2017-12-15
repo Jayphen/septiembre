@@ -37,7 +37,7 @@ const CartModal = ({
     }}
   >
     <div className="shopping-cart--contents">
-      <header>
+      <header className="shopping-cart--header">
         <h1 id="heading">Your shopping bag</h1>
         <ModalClose handleClick={onRequestClose} fill="#938F9C" />
       </header>
@@ -49,7 +49,10 @@ const CartModal = ({
           products={products}
         />
         {/* Show the discount panel if there is a discount applied and items in cart */}
-        {itemsInCart.length > 0 && discount > 0 && <CartDiscount percent={discount} />}
+        {itemsInCart.length > 0 &&
+          discount > 0 && (
+            <CartDiscount percent={discount} itemsInCart={itemsInCart} products={products} />
+          )}
         {itemsInCart.length > 0 && (
           <CartTotal itemsInCart={itemsInCart} products={products} discount={discount} />
         )}

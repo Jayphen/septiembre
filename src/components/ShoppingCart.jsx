@@ -8,7 +8,7 @@ class ShoppingCart extends Component {
     modalIsOpen: false,
     itemsInCart: [{ id: 1, size: 'S', qty: 2 }, { id: 2, size: 'S', qty: 1 }],
     products: [],
-    discount: 0,
+    discount: 10,
     productsLoading: true,
   };
 
