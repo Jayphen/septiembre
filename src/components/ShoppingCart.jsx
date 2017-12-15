@@ -8,6 +8,7 @@ class ShoppingCart extends Component {
     modalIsOpen: false,
     itemsInCart: [{ id: 1, size: 'S', qty: 2 }, { id: 2, size: 'S', qty: 1 }],
     products: [],
+    discount: 0,
   };
 
   componentDidMount = () => {
@@ -16,7 +17,7 @@ class ShoppingCart extends Component {
       this.setState({
         products,
       });
-    }, 500);
+    }, 300);
   };
 
   openModal = () => {
@@ -68,6 +69,7 @@ class ShoppingCart extends Component {
           handleDelete={this.handleDelete}
           handleChange={this.handleChange}
           products={this.state.products}
+          discount={this.state.discount}
         />
       </React.Fragment>
     );

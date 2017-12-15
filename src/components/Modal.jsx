@@ -4,6 +4,7 @@ import Modal from 'react-modal';
 import ModalClose from './ModalClose';
 import CartItems from './CartItems';
 import CartTotal from './CartTotal';
+import CartDiscount from './CartDiscount';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 const CartModal = ({
@@ -13,6 +14,7 @@ const CartModal = ({
   handleDelete,
   handleChange,
   products,
+  discount,
 }) => (
   <Modal
     tabIndex={0}
@@ -45,9 +47,14 @@ const CartModal = ({
         items={itemsInCart}
         products={products}
       />
-      {itemsInCart.length > 0 && <CartTotal itemsInCart={itemsInCart} products={products} />}
+      {/* Show the discount panel if there is a discount applied and items in cart */}
+      {itemsInCart.length > 0 && discount > 0 && <CartDiscount percent={discount} />}
+      {itemsInCart.length > 0 && (
+        <CartTotal itemsInCart={itemsInCart} products={products} discount={discount} />
+      )}
     </React.Fragment>
 
+    {/* Fade in the empty cart notice after a delay equal to the exit animation of the cart items */}
     <ReactCSSTransitionGroup
       transitionName="empty-cart"
       transitionEnterTimeout={500}
