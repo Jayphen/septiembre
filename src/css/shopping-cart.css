@@ -2,31 +2,17 @@
   // Prevent scroll when modal is open
   overflow: hidden;
 }
-.ReactModalPortal > * {
+.ReactModalPortal > div > div {
   opacity: 0;
-}
-.shopping-cart-overlay {
-  // Transition on open and close
-  opacity: 0;
-  transform: translateY(20px);
 }
 
 .shopping-cart-overlay--after-open {
-  transition: all 300ms ease-in;
   background: rgba(250,248,245,0.9);
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 1;
-  transform: translateY(0px);
-}
-
-.shopping-cart-overlay--before-close {
-  opacity: 0;
-  transition: all 200ms ease-out;
-  transform: translateY(10px);
 }
 
 .shopping-cart {
@@ -38,9 +24,11 @@
   border-radius: 3px;
   left: 50%;
   top: 50%;
-  transform: translateX(-50%) translateY(-50%);
   background: white;
   box-shadow: 0 0 40px 0 #EBE8E1;
+  // Transition on open and close
+  opacity: 0;
+  transform: translateX(-50%) translateY(calc(-50% + 20px));
 
   @media (--xs) {
     height: 100%;
@@ -64,6 +52,19 @@
     height: 1.5rem;
     cursor: pointer;
   }
+
+  &--after-open {
+    transition: all 300ms ease-in;
+    transform: translateX(-50%) translateY(-50%);
+    opacity: 1 !important;
+  }
+
+  &--before-close {
+    opacity: 0!important;
+    transition: all 300ms ease-out;
+    transform: translateX(-50%) translateY(calc(-50% + 20px));
+  }
+
 }
 
 .shopping-cart:focus {
