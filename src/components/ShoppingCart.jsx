@@ -9,16 +9,23 @@ class ShoppingCart extends Component {
     itemsInCart: [{ id: 1, size: 'S', qty: 2 }, { id: 2, size: 'S', qty: 1 }],
     products: [],
     discount: 0,
+    productsLoading: true,
   };
 
   componentDidMount = () => {
     // This would normally be an http request
-    setTimeout(() => {
+    this.getProducts().then((prods) => {
       this.setState({
-        products,
+        products: prods,
+        productsLoading: false,
       });
-    }, 300);
+    });
   };
+
+  getProducts = () =>
+    new Promise((resolve) => {
+      setTimeout(() => resolve(products), 2000);
+    });
 
   openModal = () => {
     this.setState({ modalIsOpen: true });
@@ -55,8 +62,10 @@ class ShoppingCart extends Component {
   };
 
   render() {
-    return (
-      <React.Fragment>
+    return this.state.productsLoading ? (
+      <Button text="Adding to shopping bag..." />
+    ) : (
+      <div>
         <Button
           text="Added! View shopping bag"
           handleClick={this.openModal}
@@ -71,7 +80,7 @@ class ShoppingCart extends Component {
           products={this.state.products}
           discount={this.state.discount}
         />
-      </React.Fragment>
+      </div>
     );
   }
 }
