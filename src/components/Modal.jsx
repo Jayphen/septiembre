@@ -6,6 +6,7 @@ import ModalClose from './ModalClose';
 import CartItems from './CartItems';
 import CartTotal from './CartTotal';
 import CartDiscount from './CartDiscount';
+import Button from './Button';
 
 const CartModal = ({
   isOpen,
@@ -74,6 +75,12 @@ const CartModal = ({
         )}
       </ReactCSSTransitionGroup>
     </div>
+    {itemsInCart.length !== 0 && (
+      <div className="cart--actions">
+        <Button text="Continue shopping" type="tertiary" handleClick={onRequestClose} />
+        <Button text="Go to checkout" />
+      </div>
+    )}
   </Modal>
 );
 

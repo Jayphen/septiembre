@@ -39,6 +39,23 @@
     border-bottom: 0.1em solid var(--pink);
     padding-bottom: 0.1em;
   }
+
+  &--tertiary {
+    color: var(--light-aubergine);
+    background: white;
+    border: 2px solid var(--light-aubergine);
+    padding: var(--xl) var(--sm);
+    font-size: var(--lg);
+    font-weight: 500;
+    transition: all 0.1s ease-in;
+    width: 100%;
+    border-radius: 8px;
+  }
+  &--tertiary:hover,
+  &--tertiary:focus {
+    color: var(--content);
+    transform: translateY(-1px);
+  }
 }
 
 .btn:active,
